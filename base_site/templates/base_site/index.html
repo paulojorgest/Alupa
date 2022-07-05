@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt-br" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compartible" content="IE=edge">
+    <title>Alupa</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'base_site/style.css' %}" />
+  </head>
+  <body>
+
+
+    <nav>
+
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#empresa">Empresa</a></li>
+    <li><a href="#produtos">Produtos</a></li>
+    <li><a href="#infog">Informações Gerais</a></li>
+  </ul>
+</nav>
+
+
+<section id="home">
+  <h1>Casa</h1>
+</section>
+
+<section id="empresa">
+  <h1>Empresa</h1>
+</section>
+
+<section id="produtos">
+  {%for Prod in product_list %}
+    <a href="{{ Prod.get_absolute_url }}">{{Prod}}</a>
+  {% endfor %}
+</section>
+
+
+<section id="infog">
+  <h1>Informações Gerais</h1>
+</section>
+  </body>
+</html>
